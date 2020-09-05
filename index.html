@@ -1,18 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Mülleimer</title>
-
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+<title>Müllstellen finden</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="">
+	</script>
 	
-</head>
-<body>
+<style>
+* {
+  box-sizing: border-box;
+}
 
-<div id="mapid" style="width: 800px; height: 400px;"></div>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+</style>
+</head>
+<body style="background-color:lightBlue;">
+
+<header>
+  <h2>Müllentsorgen</h2>
+<p>Müll Entsorgung ist wichtig damit du dich besser orientieren kannst, haben wir dir eine Website mit unterschiedlichsten Müllablagestellen gebaut.</p>
+<p>Du kannst unten in der Map einfach auf die Müllkontainer klicken um dir weiter informationen anzeigen zu lassen.</p>
+</header>
+
+<section>
+  <nav>
+    <ul>
+      <li><a href="#"> - Map</a></li>
+      <li><a href="#">- weiter Infos</a></li>
+    </ul>
+  </nav>
+  
+  <article>
+    <h1>Müllstops</h1>
+	<div id="mapid" style="width: 800px; height: 800px;"></div>
+
 <script>
 	var mymap = L.map('mapid').setView([51.479325, 11.973335], 13);
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -32,7 +113,7 @@
 		.bindPopup("<b>Mülleimer</b><br />für alles").openPopup();
         L.marker([51.479325, 11.933335]).addTo(mymap)
 		.bindPopup("<b>Mülleimer</b><br />für alles").openPopup();
-        L.marker([51.479230, 11.943335]).addTo(mymap)
+        L.marker([51.478030, 11.943335]).addTo(mymap)
 		.bindPopup("<b>Mülleimer</b><br />für alles").openPopup();
 
 	var popup = L.popup();
@@ -44,5 +125,14 @@
 	}
 	mymap.on('click', onMapClick);
 </script>
+    <p></p>
+    <p><p>
+  </article>
+</section>
+
+<footer>
+  <p>Footer</p>
+</footer>
+
 </body>
 </html>
