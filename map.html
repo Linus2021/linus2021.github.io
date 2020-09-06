@@ -84,8 +84,13 @@ footer {
 <section>
   <nav>
     <ul>
-      <li><a href="index.html"> - start</a></li>
-      <li><a href="weitere_infos.html">- weiter Infos</a></li>
+      <form action="index.html">
+	 <input type="submit" value="Start">
+	 </form>
+	 <p>  </p>
+	 <form action="weitere_infos.html">
+	 <input type="submit" value="Weitere Infos">
+	 </form>
     </ul>
   </nav>
   
@@ -112,9 +117,10 @@ footer {
 		.bindPopup("<b>Mülleimer</b><br />für alles").openPopup();
         L.marker([51.479325, 11.933335]).addTo(mymap)
 		.bindPopup("<b>Mülleimer</b><br />für alles").openPopup();
-        L.marker([51.478030, 11.943335]).addTo(mymap)
+        L.marker([51.478030, 11.943335]).addTo(mymap)						
 		.bindPopup("<b>Mülleimer</b><br />für alles").openPopup();
-
+		L.marker([51.469997, 11.904599]).addTo(mymap)
+		.bindPopup("<b>Wertstoffhof</b><br />Schieferstraße 2, 06126 Halle (Saale)").openPopup();
 	var popup = L.popup();
 	function onMapClick(e) {
 		popup
