@@ -63,8 +63,8 @@ footer {
 }
   
 .button {
-  background-color: #4CAF50;
-  border: none;
+  background-color: lightblue;
+  border: 100;
   color: white;
   padding: 15px 64px;
   text-align: center;
